@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for post in posts.all %}
+    <h3>{{ post.title }}</h1>
+    <p>커뮤니티 제안자: {{ post.user }}</p>
+    <p>{{ post.pub_date }}</p>
+    <p>{{ post.goal }}</p>
+    <p>{{ post.keyword }}</p>
+    <a href="{% url 'detail' post.id %}">....more</a></p>
+    <!-- <p>{{ post.body }}</p> -->
+{% endfor %}
+
+{% endblock %}

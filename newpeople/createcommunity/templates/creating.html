@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>creating</title>
+</head>
+<body>
+    <div class="content">
+        <a href = "{% url 'about' %}">커뮤니티는 어떻게 제안해야할까요?</a>
+        <form action = "{% url 'postcreate' %}">
+            <h5>커뮤니티명 : </h5>
+            <input type="text" name="title">
+            <br><br>
+            <h5>커뮤니티 개설 목적 : </h5>
+            <textarea cols=80 rows=5 name="goal"></textarea>
+            <br><br>
+            <h5>커뮤니티 설명 : </h5>
+            <textarea cols=80 rows=10 name="body"></textarea>
+            <br><br>
+            <h5>커뮤니티 키워드 : </h5>
+            <textarea cols = "20" rows = "1" name = "keyword"></textarea>
+            <br><br>
+            <input class="btn btn-dark" type="submit" value="글쓰기">
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

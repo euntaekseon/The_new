@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    {% if user.is_authenticated %}
+        <h3>{{ user.username }}님의 보관함</h3><br>
+
+    <h4>좋아요 누른 글</h4>
+        {% for post in postsave  %}
+            <p>커뮤니티명: {{post.title}}<br>
+                커뮤니티 제안자: {{post.user}}<br>
+                <a href="{%url 'detail' post.id %}">바로가기</a></p>
+        {% endfor %} 
+
+    {% endif %} 
+{% endblock %}
